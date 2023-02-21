@@ -1,0 +1,3 @@
+[submodule "lab/vector"]
+	path = lab/vector
+	url = git@github.com:Conless/vector.git
