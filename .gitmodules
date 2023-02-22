@@ -1,3 +1,6 @@
 [submodule "lab/vector"]
 	path = lab/vector
 	url = git@github.com:Conless/vector.git
+[submodule "lab/priority_queue"]
+	path = lab/priority_queue
+	url = git@github.com:Conless/priority_queue.git

@@ -39,3 +39,33 @@ dist：一个节点到子节点中外节点的最短距离，其中外节点指�
 ### 拓展操作
 1. 删除任意节点：将左右儿子合并，向上更新 dist 直到无需更新
 2. 整个堆进行算术操作：在根上打标记，删除/合并的时候 pushdown 即可
+
+### 实现
+```cpp
+node *merge(node *x, node *y) {
+    if (x == nullptr || y == nullptr) {
+        if (x == nullptr)
+            x = y;
+        else
+            y = x;
+        return x;
+    }
+    if (x->data > y->data)
+        swap(x, y);
+    x->rson = merge(x->rson, y);
+    x->rson->rt = x->rt;
+    if (x->lson == nullptr || x->lson->dis < x->rson->dis)
+        swap(x->lson, x->rson);
+    x->dis = (x->rson != nullptr) ? x->rson->dis + 1 : 0;
+    return x;
+}
+
+void erase(node *x) {
+    x->rt = merge(x->lson, x->rson);
+    if (x->lson)
+        x->lson->rt = x->rt;
+    if (x->rson)
+        x->rson->rt = x->rt;
+    x->dis = -1;
+}
+```
