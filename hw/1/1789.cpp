@@ -5,7 +5,6 @@ using namespace std;
 
 const int MAXN = 2e6 + 5;
 
-
 class QuickRead {
   public:
     inline char gc() {
@@ -32,7 +31,7 @@ class QuickRead {
 } qin;
 
 int num[MAXN], fail[MAXN], len[MAXN];
-map<int, int> tr[MAXN];
+int tr[MAXN][30];
 
 int main() {
     ios::sync_with_stdio(false);
@@ -44,19 +43,23 @@ int main() {
         if (opt == 1) {
             qin >> x;
             if (m) {
-                int u = num[m];
-                num[++m] = x;
-                tr[u][x] = ++cnt;
-                len[cnt] = m;
-                fail[cnt] = tr[fail[u]][m];
-                printf("%d\n", m - len[fail[cnt]]);
+                // int u = num[m];
+                // num[++m] = x;
+                // tr[u][x] = ++cnt;
+                // len[cnt] = m;
+                // fail[cnt] = tr[fail[u]][m];
+                // printf("%d\n", m - len[fail[cnt]]);
+                if (num[fail[m] + 1] == x)
+                    tr[m][x] = m + 1;
+                else
+                    tr[m][x] = tr[fail[m]][x];
+                // fail[m + 1] = fail[]
             } else {
-                num[++m] = ++cnt;
                 puts("1");
             }
+            num[++m] = x;
         } else {
-            int u = num[m - 1];
-            tr[u][num[m]] = 0;
+            tr[m - 1][num[m]] = 0;
             m--;
         }
     }
