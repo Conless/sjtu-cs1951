@@ -1,6 +1,7 @@
 ---
 title: 数据结构（三）：堆与 STL priority_queue
 date: 2023/02/21 11:32:00
+math: true
 categories:
 - [Computer Science, Data Structure (CS1951@SJTU)]
 ---

@@ -1,6 +1,7 @@
 ---
 title: 数据结构（二）：字符串算法
 date: 2023/02/19 22:06:00
+math: true
 categories:
 - [Computer Science, Data Structure (CS1951@SJTU)]
 ---
