@@ -4,3 +4,6 @@
 [submodule "lab/priority_queue"]
 	path = lab/priority_queue
 	url = git@github.com:Conless/priority_queue.git
+[submodule "lab/map"]
+        path = lab/map
+        url = git@github.com:Conless/map.git
