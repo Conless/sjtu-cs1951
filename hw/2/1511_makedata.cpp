@@ -18,7 +18,7 @@ int main() {
         else
             x = rand() % delta + lasx + 1;
         lasx = x;
-        p = rand() % maxnum + 1;
+        p = rand() % 10 + 1;
         c = rand() % maxnum + 1;
         cout << x << ' ' << p << ' ' << c << endl;
     }

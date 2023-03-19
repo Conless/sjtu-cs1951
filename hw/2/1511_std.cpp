@@ -130,11 +130,12 @@ signed main() {
             ++head;
 		int j = q[head];
 		f[i] = f[j] - sum[i] + sum[j] + (num[i] - num[j]) * x[i] + c[i];
+        std::cout << j << " " << f[i] << "\n";
 
 		while(head != tail && slope(q[tail - 1],q[tail]) > 
                               slope(q[tail],i))
             --tail;
-		q[++tail]=i;
+                q[++tail] = i;
 	}
     int i = n;
     ll ans = f[n];

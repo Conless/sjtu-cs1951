@@ -8,9 +8,9 @@ const int MAXN = 1e6 + 5;
 typedef long long ll;
 
 int n;
-int x[MAXN], p[MAXN], c[MAXN];
+ll x[MAXN], p[MAXN], c[MAXN];
 ll s[MAXN], d[MAXN], f[MAXN], g[MAXN];
-int que[MAXN];
+ll que[MAXN];
 
 // return whether a/b < c/d (ad < bc)
 bool comp(ll a, ll b, ll c, ll d) {
@@ -41,12 +41,12 @@ int main() {
         f[i] = (f[j] + d[j] - x[i] * s[j]) + x[i] * s[i] - d[i] + c[i];
         g[i] = f[i] + d[i];
         while (head < tail) {
-            if (!comp(g[i] - g[que[tail]], s[i] - s[que[tail]], g[que[tail]] - g[que[tail - 1]], s[que[tail] - s[que[tail - 1]]]))
+            if (!comp(g[i] - g[que[tail]], s[i] - s[que[tail]], g[que[tail]] - g[que[tail - 1]], s[que[tail]] - s[que[tail - 1]]))
                 break;
             tail--;
         }
         que[++tail] = i;
-        cout << f[i] << ' ';
+        // cout << f[i] << ' ';
     }
     cout << f[n] << endl;
     return 0;
