@@ -160,7 +160,7 @@ signed main() {
     long long premax = 0;
     for(int i = 1 ; i <= n ; ++i) {
         f[i] = s[i].w + query(s[i].x2);
-        cout << s[i].x2 << ' ' << query(s[i].x2) << '\n';
+        // cout << s[i].x2 << ' ' << f[i] << '\n';
         premax = max(premax,f[i]);
         insert(s[i].x2,f[i]);
     }
