@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
-            "args": [],
+            "args": ["<1829.in"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
