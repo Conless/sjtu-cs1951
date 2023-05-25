@@ -92,6 +92,7 @@
     "cmake.configureOnOpen": true,
     "C_Cpp.clang_format_style": "Visual Studio",
     "C_Cpp.formatting": "default",
-    "editor.detectIndentation": true,
-    "cmake.sourceDirectory": "${workspaceFolder}/lab/vector"
+    "editor.detectIndentation": false,
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "editor.tabSize": 2
 }
